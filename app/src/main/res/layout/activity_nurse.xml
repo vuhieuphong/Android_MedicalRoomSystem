@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/textViewNurseId"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="Id: (uneditable)"
+            android:textSize="18dp"
+            android:layout_marginTop="150dp"
+            android:layout_marginLeft="30dp">
+        </TextView>
+
+        <TextView
+            android:id="@+id/textViewNurseFname"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="Enter First Name:"
+            android:textSize="18dp"
+            android:layout_below="@id/textViewNurseId"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="30dp">
+        </TextView>
+
+        <TextView
+            android:id="@+id/textViewNurseLname"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="Enter Last Name:"
+            android:textSize="18dp"
+            android:layout_below="@id/textViewNurseFname"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="30dp">
+        </TextView>
+
+        <TextView
+            android:id="@+id/textViewNurseDepartment"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="Enter Department:"
+            android:textSize="18dp"
+            android:layout_below="@id/textViewNurseLname"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="30dp">
+        </TextView>
+
+        <TextView
+            android:id="@+id/textViewNursePassword"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="Enter Password:"
+            android:textSize="18dp"
+            android:layout_below="@id/textViewNurseDepartment"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="30dp">
+        </TextView>
+
+        <EditText
+            android:id="@+id/editTextNurseId"
+            android:editable="false"
+            android:layout_width="200dp"
+            android:layout_marginTop="130dp"
+            android:layout_toRightOf="@id/textViewNurseId"
+            android:layout_height="wrap_content">
+        </EditText>
+
+        <EditText
+            android:id="@+id/editTextNurseFname"
+            android:layout_width="200dp"
+            android:layout_marginTop="3dp"
+            android:layout_below="@id/editTextNurseId"
+            android:layout_toRightOf="@id/textViewNurseId"
+            android:layout_height="wrap_content">
+        </EditText>
+
+        <EditText
+            android:id="@+id/editTextNurseLname"
+            android:layout_width="200dp"
+            android:layout_marginTop="3dp"
+            android:layout_below="@id/editTextNurseFname"
+            android:layout_toRightOf="@id/textViewNurseId"
+            android:layout_height="wrap_content">
+        </EditText>
+
+        <EditText
+            android:id="@+id/editTextNurseDepartment"
+            android:layout_width="200dp"
+            android:layout_marginTop="3dp"
+            android:layout_below="@id/editTextNurseLname"
+            android:layout_toRightOf="@id/textViewNurseId"
+            android:layout_height="wrap_content">
+        </EditText>
+
+        <EditText
+            android:id="@+id/editTextNursePassword"
+            android:inputType="textPassword"
+            android:layout_width="200dp"
+            android:layout_marginTop="3dp"
+            android:layout_below="@id/editTextNurseDepartment"
+            android:layout_toRightOf="@id/textViewNurseId"
+
+            android:layout_height="wrap_content">
+        </EditText>
+
+        <Button
+            android:id="@+id/buttonCreateNurse"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/editTextNursePassword"
+            android:layout_marginTop="30dp"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/roundedcorners"
+            android:backgroundTint="@color/colorPrimary"
+            android:text="Create" />
+
+        <Button
+            android:id="@+id/buttonReturn"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/buttonCreateNurse"
+            android:layout_marginTop="30dp"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/roundedcorners"
+            android:backgroundTint="@color/colorPrimaryDark"
+            android:text="Return" />
+
+        <TextView
+            android:text="Create New Nurse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:fontFamily="sans-serif-black"
+            android:layout_marginTop="60dp"
+            android:layout_centerHorizontal="true"
+            android:textAlignment="center"
+            ></TextView>
+
+        <TextView
+            android:id="@+id/textViewDisplayNurses"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:layout_below="@id/buttonReturn"
+            android:layout_marginTop="20dp"
+            android:layout_centerHorizontal="true"
+            />
+
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

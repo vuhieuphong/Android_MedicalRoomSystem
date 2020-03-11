@@ -8,8 +8,9 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
 import com.example.hieuphong_vu_duc_dang_comp304_sec003_lab04.Dao.NurseDao;
+import com.example.hieuphong_vu_duc_dang_comp304_sec003_lab04.Entity.Nurse;
 
-@Database(entities = {Person.class},version = 1)
+@Database(entities = {Nurse.class},version = 1,exportSchema = false)
 public abstract class AppDatabase extends RoomDatabase {
     private static volatile AppDatabase INSTANCE;
     private static final String DATABASE_NAME = "MedicalRoomDB";
@@ -21,6 +22,8 @@ public abstract class AppDatabase extends RoomDatabase {
             INSTANCE = Room.databaseBuilder(context,
                     AppDatabase.class, DATABASE_NAME).build();
         }
+        //to delete database:
+        //context.deleteDatabase(DATABASE_NAME);
         return INSTANCE;
     }
 }
