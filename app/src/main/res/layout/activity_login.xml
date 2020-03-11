@@ -20,8 +20,21 @@
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:background="@drawable/roundedcorners"
+            android:backgroundTint="@color/colorAccent"
             android:src="@drawable/login_logo"
             android:text="Login"></Button>
+
+        <Button
+            android:id="@+id/btnNewNurse"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="30dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/btnLogin"
+            android:background="@drawable/roundedcorners"
+            android:src="@drawable/login_logo"
+            android:backgroundTint="@color/colorPrimaryDark"
+            android:text="Create New Nurse"></Button>
 
         <TextView
             android:id="@+id/textviewNurse"
@@ -60,7 +73,15 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPassword" />
-
-
+    
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Login to Medical Room System"
+            android:textSize="20dp"
+            android:fontFamily="sans-serif-black"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="90dp"
+            ></TextView>
     </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,7 +6,6 @@ import android.view.View;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.room.Room;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -15,12 +14,21 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        final Button btnLogin=(Button)findViewById(R.id.btnLogin);
+        final Button btnLogin = (Button) findViewById(R.id.btnLogin);
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent mainActivity=new Intent(getApplicationContext(),MainActivity.class);
+                Intent mainActivity = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(mainActivity);
+            }
+        });
+
+        final Button btnNewNurse=(Button)findViewById(R.id.btnNewNurse);
+        btnNewNurse.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent nurseActivity = new Intent(getApplicationContext(), NurseActivity.class);
+                startActivity(nurseActivity);
             }
         });
     }
