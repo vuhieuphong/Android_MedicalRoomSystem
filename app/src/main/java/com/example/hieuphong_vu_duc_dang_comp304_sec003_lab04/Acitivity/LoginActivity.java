@@ -1,6 +1,7 @@
 package com.example.hieuphong_vu_duc_dang_comp304_sec003_lab04.Acitivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -26,9 +27,7 @@ public class LoginActivity extends AppCompatActivity {
     Nurse nurse;
     EditText editTextLoginNurseId;
     EditText editTextLoginPassword;
-    private boolean valid;
-    private Integer loginId=0;
-    private String loginPass="";
+    SharedPreferences pref;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +40,11 @@ public class LoginActivity extends AppCompatActivity {
         nurseViewModel= ViewModelProviders.of(this).get(NurseViewModel.class);
         nurse=new Nurse();
 
-
+        pref = getSharedPreferences("user_details",MODE_PRIVATE);
+        if(pref.contains("id") && pref.contains("password")){
+            Intent mainActivity=new Intent(this,MainActivity.class);
+            startActivity(mainActivity);
+        }
 
         final Button btnLogin = (Button) findViewById(R.id.btnLogin);
 
@@ -53,6 +56,13 @@ public class LoginActivity extends AppCompatActivity {
                     String loginPass=editTextLoginPassword.getText().toString();
                     Nurse nurseByIdPass=nurseViewModel.getNurseByIdPass(loginId,loginPass);
                     if(nurseByIdPass!=null){
+                        //saving into shared preference
+                        SharedPreferences.Editor editor = pref.edit();
+                        editor.putInt("id",loginId);
+                        editor.putString("password",loginPass);
+                        editor.putString("name",nurseByIdPass.getFName()+" "+nurseByIdPass.getLName());
+                        editor.commit();
+
                         Intent mainActivity=new Intent(getApplicationContext(),MainActivity.class);
                         startActivity(mainActivity);
                     }
