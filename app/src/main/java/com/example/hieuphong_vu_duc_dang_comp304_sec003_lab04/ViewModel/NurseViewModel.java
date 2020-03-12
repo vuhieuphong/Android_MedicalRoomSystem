@@ -1,6 +1,7 @@
 package com.example.hieuphong_vu_duc_dang_comp304_sec003_lab04.ViewModel;
 
 import android.app.Application;
+import android.os.AsyncTask;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
@@ -24,7 +25,6 @@ public class NurseViewModel extends AndroidViewModel {
         insertNurseResult=nurseRepository.getInsertNurseResult();
         allNurses=nurseRepository.getAllNurses();
         lastNurseId=nurseRepository.getLastNurseId();
-
     }
 
     public void insertNurse(Nurse nurse){
@@ -38,5 +38,7 @@ public class NurseViewModel extends AndroidViewModel {
     public LiveData<List<Nurse>> getAllNurses(){return allNurses;}
 
     public LiveData<Integer> getLastNurseId(){return lastNurseId;}
+
+    public Nurse getNurseByIdPass(int nurse_id, String pass){return nurseRepository.getNurseByIdPass(nurse_id,pass);}
 
 }

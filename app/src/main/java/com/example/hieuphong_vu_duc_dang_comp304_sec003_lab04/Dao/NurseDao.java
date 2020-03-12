@@ -19,4 +19,7 @@ public interface NurseDao {
 
     @Query("select max(nurseId) from nurse")
     LiveData<Integer> getLastNurseId();
+
+    @Query("select * from nurse where nurseId=:nurse_id and password=:pass")
+    Nurse getNurseByIdPass(int nurse_id,String pass);
 }

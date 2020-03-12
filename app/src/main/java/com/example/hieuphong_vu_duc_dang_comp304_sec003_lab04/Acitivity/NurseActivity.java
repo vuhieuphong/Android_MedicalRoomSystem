@@ -70,7 +70,9 @@ public class NurseActivity extends AppCompatActivity {
         nurseViewModel.getLastNurseId().observe(this, new Observer<Integer>() {
             @Override
             public void onChanged(Integer lastNurseId) {
-                editTextNurseId.setText((Integer.toString(lastNurseId+1)));
+                if(lastNurseId!=null){
+                    editTextNurseId.setText((Integer.toString(lastNurseId+1)));
+                }
             }
         });
 
@@ -82,6 +84,9 @@ public class NurseActivity extends AppCompatActivity {
                     nurse.setFName(editTextFName.getText().toString());
                     nurse.setLName(editTextLName.getText().toString());
                     nurse.setDepartment(editTextDepartment.getText().toString());
+                    if(editTextPassword.getText().toString().matches("")){
+                        throw new Exception("Password cannot be empty");
+                    }
                     nurse.setPassword(editTextPassword.getText().toString());
                     nurseViewModel.insertNurse(nurse);
                 }
