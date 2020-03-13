@@ -43,6 +43,9 @@ public class NurseActivity extends AppCompatActivity {
 
         nurseViewModel= ViewModelProviders.of(this).get(NurseViewModel.class);
         nurse=new Nurse();
+
+
+        /*not working:
         nurseViewModel.getInsertNurseResult().observe(this, new Observer<Integer>() {
             @Override
             public void onChanged(@Nullable Integer result) {
@@ -54,7 +57,8 @@ public class NurseActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(),"Error Creating Nurse",Toast.LENGTH_SHORT).show();
                 }
             }
-        });
+        });*/
+
 
         nurseViewModel.getAllNurses().observe(this, new Observer<List<Nurse>>() {
             @Override

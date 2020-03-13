@@ -13,7 +13,7 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <TextView
-            android:id="@+id/textViewNurseId"
+            android:id="@+id/textViewPatientId"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:text="Id: (uneditable)"
@@ -23,96 +23,112 @@
         </TextView>
 
         <TextView
-            android:id="@+id/textViewNurseFname"
+            android:id="@+id/textViewPatientFname"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:text="Enter First Name:"
             android:textSize="18dp"
-            android:layout_below="@id/textViewNurseId"
+            android:layout_below="@id/textViewPatientId"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="30dp">
         </TextView>
 
         <TextView
-            android:id="@+id/textViewNurseLname"
+            android:id="@+id/textViewPatientLname"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:text="Enter Last Name:"
             android:textSize="18dp"
-            android:layout_below="@id/textViewNurseFname"
+            android:layout_below="@id/textViewPatientFname"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="30dp">
         </TextView>
 
         <TextView
-            android:id="@+id/textViewNurseDepartment"
+            android:id="@+id/textViewPatientDepartment"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:text="Enter Department:"
             android:textSize="18dp"
-            android:layout_below="@id/textViewNurseLname"
+            android:layout_below="@id/textViewPatientLname"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="30dp">
         </TextView>
 
         <TextView
-            android:id="@+id/textViewNursePassword"
+            android:id="@+id/textViewPatientRoom"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:text="Enter Password:"
+            android:text="Enter Room:"
             android:textSize="18dp"
-            android:layout_below="@id/textViewNurseDepartment"
+            android:layout_below="@id/textViewPatientDepartment"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="30dp">
         </TextView>
 
+        <TextView
+            android:id="@+id/textViewPatientNurseId"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:text="Enter Nurse Id(FK):"
+            android:textSize="18dp"
+            android:layout_below="@id/textViewPatientRoom"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp">
+        </TextView>
+
         <EditText
-            android:id="@+id/editTextNurseId"
+            android:id="@+id/editTextPatientId"
             android:editable="false"
             android:layout_width="200dp"
             android:layout_marginTop="130dp"
-            android:layout_toRightOf="@id/textViewNurseId"
+            android:layout_toRightOf="@id/textViewPatientId"
             android:layout_height="wrap_content">
         </EditText>
 
         <EditText
-            android:id="@+id/editTextNurseFname"
+            android:id="@+id/editTextPatientFname"
             android:layout_width="200dp"
-            android:layout_below="@id/editTextNurseId"
-            android:layout_toRightOf="@id/textViewNurseId"
+            android:layout_below="@id/editTextPatientId"
+            android:layout_toRightOf="@id/textViewPatientId"
             android:layout_height="wrap_content">
         </EditText>
 
         <EditText
-            android:id="@+id/editTextNurseLname"
+            android:id="@+id/editTextPatientLname"
             android:layout_width="200dp"
-            android:layout_below="@id/editTextNurseFname"
-            android:layout_toRightOf="@id/textViewNurseId"
+            android:layout_below="@id/editTextPatientFname"
+            android:layout_toRightOf="@id/textViewPatientId"
             android:layout_height="wrap_content">
         </EditText>
 
         <EditText
-            android:id="@+id/editTextNurseDepartment"
+            android:id="@+id/editTextPatientDepartment"
             android:layout_width="200dp"
-            android:layout_below="@id/editTextNurseLname"
-            android:layout_toRightOf="@id/textViewNurseId"
+            android:layout_below="@id/editTextPatientLname"
+            android:layout_toRightOf="@id/textViewPatientId"
             android:layout_height="wrap_content">
         </EditText>
 
         <EditText
-            android:id="@+id/editTextNursePassword"
-            android:inputType="textPassword"
+            android:id="@+id/editTextPatientRoom"
             android:layout_width="200dp"
-            android:layout_below="@id/editTextNurseDepartment"
-            android:layout_toRightOf="@id/textViewNurseId"
-
+            android:layout_below="@id/editTextPatientDepartment"
+            android:layout_toRightOf="@id/textViewPatientId"
             android:layout_height="wrap_content">
         </EditText>
+
+        <EditText
+            android:id="@+id/editTextPatientNurseId"
+            android:layout_width="200dp"
+            android:layout_below="@id/editTextPatientRoom"
+            android:layout_toRightOf="@id/textViewPatientId"
+            android:layout_height="wrap_content"></EditText>
 
         <Button
-            android:id="@+id/buttonCreateNurse"
+            android:id="@+id/buttonCreatePatient"
             android:layout_centerHorizontal="true"
-            android:layout_below="@id/editTextNursePassword"
+            android:layout_below="@id/editTextPatientNurseId"
             android:layout_marginTop="30dp"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
@@ -123,7 +139,7 @@
         <Button
             android:id="@+id/buttonReturn"
             android:layout_centerHorizontal="true"
-            android:layout_below="@id/buttonCreateNurse"
+            android:layout_below="@id/buttonCreatePatient"
             android:layout_marginTop="30dp"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
@@ -132,7 +148,7 @@
             android:text="Return" />
 
         <TextView
-            android:text="Create New Nurse"
+            android:text="Create New Patient"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20dp"
@@ -143,7 +159,7 @@
             ></TextView>
 
         <TextView
-            android:id="@+id/textViewDisplayNurses"
+            android:id="@+id/textViewDisplayPatients"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text=""

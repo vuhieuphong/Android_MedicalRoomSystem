@@ -42,6 +42,8 @@ public class LoginActivity extends AppCompatActivity {
 
         pref = getSharedPreferences("user_details",MODE_PRIVATE);
         if(pref.contains("id") && pref.contains("password")){
+            Toast.makeText(getApplicationContext(),"Welcome "+pref.getString("name",null),Toast.LENGTH_SHORT)
+                    .show();
             Intent mainActivity=new Intent(this,MainActivity.class);
             startActivity(mainActivity);
         }
@@ -62,6 +64,9 @@ public class LoginActivity extends AppCompatActivity {
                         editor.putString("password",loginPass);
                         editor.putString("name",nurseByIdPass.getFName()+" "+nurseByIdPass.getLName());
                         editor.commit();
+
+                        Toast.makeText(getApplicationContext(),"Welcome "+pref.getString("name",null),Toast.LENGTH_SHORT)
+                                .show();
 
                         Intent mainActivity=new Intent(getApplicationContext(),MainActivity.class);
                         startActivity(mainActivity);

@@ -8,13 +8,16 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
 import com.example.hieuphong_vu_duc_dang_comp304_sec003_lab04.Dao.NurseDao;
+import com.example.hieuphong_vu_duc_dang_comp304_sec003_lab04.Dao.PatientDao;
 import com.example.hieuphong_vu_duc_dang_comp304_sec003_lab04.Entity.Nurse;
+import com.example.hieuphong_vu_duc_dang_comp304_sec003_lab04.Entity.Patient;
 
-@Database(entities = {Nurse.class},version = 1,exportSchema = false)
+@Database(entities = {Nurse.class, Patient.class},version = 1,exportSchema = false)
 public abstract class AppDatabase extends RoomDatabase {
     private static volatile AppDatabase INSTANCE;
     private static final String DATABASE_NAME = "MedicalRoomDB";
     public abstract NurseDao nurseDao();
+    public abstract PatientDao patientDao();
 
     public static synchronized AppDatabase getInstance(Context context) {
         if (INSTANCE == null) {

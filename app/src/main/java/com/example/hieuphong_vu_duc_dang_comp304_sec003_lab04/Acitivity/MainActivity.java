@@ -21,8 +21,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         prf = getSharedPreferences("user_details",MODE_PRIVATE);
-        Toast.makeText(getApplicationContext(),"Welcome "+prf.getString("name",null),Toast.LENGTH_SHORT)
-                .show();
 
         final ImageButton btnLogout=(ImageButton)findViewById(R.id.btnLogout);
         btnLogout.setOnClickListener(new View.OnClickListener() {
@@ -35,6 +33,15 @@ public class MainActivity extends AppCompatActivity {
 
                 Intent loginActivity=new Intent(getApplicationContext(),LoginActivity.class);
                 startActivity(loginActivity);
+            }
+        });
+
+        final ImageButton btnPatient=(ImageButton)findViewById(R.id.btnPatient);
+        btnPatient.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent patientActivity=new Intent(getApplicationContext(),PatientActivity.class);
+                startActivity(patientActivity);
             }
         });
     }

@@ -19,8 +19,8 @@
         <activity android:name=".Acitivity.NurseActivity"></activity>
         <activity android:name=".Acitivity.PatientActivity"></activity>
         <activity android:name=".Acitivity.TestActivity"></activity>
-        <activity android:name=".Acitivity.ViewInfoActivity"></activity>
-        <activity android:name=".Acitivity.UpdateInfoActivity"></activity>
+        <activity android:name=".Acitivity.ViewPatientActivity"></activity>
+        <activity android:name=".Acitivity.UpdateTestActivity"></activity>
 
     </application>
 
