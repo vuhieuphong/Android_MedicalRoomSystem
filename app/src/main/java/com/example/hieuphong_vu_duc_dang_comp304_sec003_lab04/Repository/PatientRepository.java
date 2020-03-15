@@ -125,7 +125,7 @@ public class PatientRepository {
         protected void onPostExecute(Void v){
             super.onPostExecute(v);
             if(valid==false){
-                Toast.makeText(UpdatePatientActivity.getUpdatePatientActivityContext(),"FK Not Met",Toast.LENGTH_SHORT).show();
+                Toast.makeText(UpdatePatientActivity.getUpdatePatientActivityContext(),"Constraint Not Met",Toast.LENGTH_SHORT).show();
             }
         }
     }

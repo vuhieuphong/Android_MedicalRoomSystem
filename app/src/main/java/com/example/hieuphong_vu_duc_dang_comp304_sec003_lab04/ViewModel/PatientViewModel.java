@@ -13,7 +13,7 @@ import java.util.List;
 
 public class PatientViewModel extends AndroidViewModel {
     private PatientRepository patientRepository;
-    private LiveData<Integer> insertPatientResult;
+    //private LiveData<Integer> insertPatientResult;
     private LiveData<List<Patient>> allPatients;
 
 
@@ -41,5 +41,4 @@ public class PatientViewModel extends AndroidViewModel {
     //}
 
     public LiveData<List<Patient>> getAllPatients(){return allPatients;}
-
 }

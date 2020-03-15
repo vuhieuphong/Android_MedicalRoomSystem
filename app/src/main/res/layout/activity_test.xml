@@ -13,125 +13,163 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <TextView
-            android:id="@+id/textViewPatientId"
+            android:id="@+id/textViewTestId"
             android:layout_width="180dp"
             android:layout_height="wrap_content"
-            android:text="Patient Id(PK):"
+            android:text="Test Id(PK):"
             android:textSize="18dp"
-            android:layout_marginTop="150dp"
+            android:layout_marginTop="120dp"
             android:layout_marginLeft="20dp">
         </TextView>
 
         <TextView
-            android:id="@+id/textViewPatientFname"
+            android:id="@+id/textViewTestWeight"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:text="Enter First Name:"
+            android:text="Enter Weight:"
             android:textSize="18dp"
-            android:layout_below="@id/textViewPatientId"
+            android:layout_below="@id/textViewTestId"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp">
         </TextView>
 
         <TextView
-            android:id="@+id/textViewPatientLname"
-            android:layout_width="150dp"
+            android:id="@+id/textViewTestTemperature"
+            android:layout_width="160dp"
             android:layout_height="wrap_content"
-            android:text="Enter Last Name:"
+            android:text="Enter Temperature:"
             android:textSize="18dp"
-            android:layout_below="@id/textViewPatientFname"
+            android:layout_below="@id/textViewTestWeight"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp">
         </TextView>
 
         <TextView
-            android:id="@+id/textViewPatientDepartment"
+            android:id="@+id/textViewTestHeartRate"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:text="Enter Department:"
+            android:text="Enter Heart Rate:"
             android:textSize="18dp"
-            android:layout_below="@id/textViewPatientLname"
+            android:layout_below="@id/textViewTestTemperature"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp">
         </TextView>
 
         <TextView
-            android:id="@+id/textViewPatientRoom"
+            android:id="@+id/textViewTestBPL"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:text="Enter Room:"
+            android:text="Enter BPL:"
             android:textSize="18dp"
-            android:layout_below="@id/textViewPatientDepartment"
+            android:layout_below="@id/textViewTestHeartRate"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp">
         </TextView>
 
         <TextView
-            android:id="@+id/textViewPatientNurseId"
+            android:id="@+id/textViewTestBPH"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:text="Enter BPH:"
+            android:textSize="18dp"
+            android:layout_below="@id/textViewTestBPL"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp">
+        </TextView>
+
+        <TextView
+            android:id="@+id/textViewTestNurseId"
             android:layout_width="160dp"
             android:layout_height="wrap_content"
             android:text="Enter Nurse Id(FK):"
             android:textSize="18dp"
-            android:layout_below="@id/textViewPatientRoom"
+            android:layout_below="@id/textViewTestBPH"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp">
+        </TextView>
+
+        <TextView
+            android:id="@+id/textViewTestPatientId"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:text="Enter Patient Id(FK):"
+            android:textSize="18dp"
+            android:layout_below="@id/textViewTestNurseId"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp">
         </TextView>
 
         <EditText
-            android:id="@+id/editTextPatientId"
+            android:id="@+id/editTextTestId"
             android:editable="false"
             android:text="Auto Generated"
             android:layout_width="200dp"
-            android:layout_marginTop="130dp"
-            android:layout_toRightOf="@id/textViewPatientId"
+            android:layout_marginTop="110dp"
+            android:layout_toRightOf="@id/textViewTestId"
             android:layout_height="wrap_content">
         </EditText>
 
         <EditText
-            android:id="@+id/editTextPatientFname"
+            android:id="@+id/editTextTestWeight"
             android:layout_width="200dp"
-            android:layout_below="@id/editTextPatientId"
-            android:layout_toRightOf="@id/textViewPatientId"
+            android:layout_below="@id/textViewTestId"
+            android:layout_toRightOf="@id/textViewTestId"
             android:layout_height="wrap_content">
         </EditText>
 
         <EditText
-            android:id="@+id/editTextPatientLname"
+            android:id="@+id/editTextTestTemperature"
             android:layout_width="200dp"
-            android:layout_below="@id/editTextPatientFname"
-            android:layout_toRightOf="@id/textViewPatientId"
+            android:layout_below="@id/editTextTestWeight"
+            android:layout_toRightOf="@id/textViewTestId"
             android:layout_height="wrap_content">
         </EditText>
 
         <EditText
-            android:id="@+id/editTextPatientDepartment"
+            android:id="@+id/editTextTestHeartRate"
             android:layout_width="200dp"
-            android:layout_below="@id/editTextPatientLname"
-            android:layout_toRightOf="@id/textViewPatientId"
+            android:layout_below="@id/editTextTestTemperature"
+            android:layout_toRightOf="@id/textViewTestId"
             android:layout_height="wrap_content">
         </EditText>
 
         <EditText
-            android:id="@+id/editTextPatientRoom"
+            android:id="@+id/editTextTestBPL"
             android:layout_width="200dp"
-            android:layout_below="@id/editTextPatientDepartment"
-            android:layout_toRightOf="@id/textViewPatientId"
+            android:layout_below="@id/editTextTestHeartRate"
+            android:layout_toRightOf="@id/textViewTestId"
             android:layout_height="wrap_content">
         </EditText>
 
         <EditText
-            android:id="@+id/editTextPatientNurseId"
+            android:id="@+id/editTextTestBPH"
             android:layout_width="200dp"
-            android:layout_below="@id/editTextPatientRoom"
-            android:layout_toRightOf="@id/textViewPatientId"
+            android:layout_below="@id/editTextTestBPL"
+            android:layout_toRightOf="@id/textViewTestId"
+            android:layout_height="wrap_content"></EditText>
+
+        <EditText
+            android:id="@+id/editTextTestNurseId"
+            android:layout_width="200dp"
+            android:layout_below="@id/editTextTestBPH"
+            android:layout_toRightOf="@id/textViewTestId"
+            android:layout_height="wrap_content"></EditText>
+
+        <EditText
+            android:id="@+id/editTextTestPatientId"
+            android:layout_width="200dp"
+            android:layout_below="@id/editTextTestNurseId"
+            android:layout_toRightOf="@id/textViewTestId"
             android:layout_height="wrap_content"></EditText>
 
         <Button
-            android:id="@+id/buttonCreatePatient"
+            android:id="@+id/buttonCreateTest"
             android:layout_centerHorizontal="true"
-            android:layout_below="@id/editTextPatientNurseId"
+            android:layout_below="@id/editTextTestPatientId"
             android:layout_marginTop="30dp"
-            android:layout_width="200dp"
+            android:layout_width="160dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="40dp"
             android:layout_height="wrap_content"
             android:background="@drawable/roundedcorners"
             android:backgroundTint="@color/colorPrimary"
@@ -140,16 +178,18 @@
         <Button
             android:id="@+id/buttonReturn"
             android:layout_centerHorizontal="true"
-            android:layout_below="@id/buttonCreatePatient"
+            android:layout_below="@id/editTextTestPatientId"
             android:layout_marginTop="30dp"
-            android:layout_width="200dp"
+            android:layout_width="160dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="40dp"
             android:layout_height="wrap_content"
             android:background="@drawable/roundedcorners"
             android:backgroundTint="@color/colorPrimaryDark"
             android:text="Return" />
 
         <TextView
-            android:text="Create Patient/Display Patients"
+            android:text="Create Test/Display Tests"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20dp"
@@ -160,7 +200,7 @@
             ></TextView>
 
         <TextView
-            android:id="@+id/textViewDisplayPatients"
+            android:id="@+id/textViewDisplayTests"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text=""

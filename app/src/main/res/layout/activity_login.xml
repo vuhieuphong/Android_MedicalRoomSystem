@@ -92,6 +92,6 @@
             android:layout_below="@id/btnNewNurse"
             android:textSize="15dp"
             android:textAlignment="center"
-            android:text="Click Create New Nurse to check Username and Password List" />
+            android:text="Click Create New Nurse to create &amp; check Username and Password List" />
     </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

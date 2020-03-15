@@ -55,7 +55,7 @@ public class UpdatePatientActivity extends AppCompatActivity {
             public void onChanged(@Nullable List<Patient> patients) {
                 String output="";
                 for(Patient patient:patients){
-                    output+=patient.getPatientId()+"."+patient.getFName()+" "+patient.getNurseId()+"\n";
+                    output+="Patient Id: "+patient.getPatientId()+" - FName: "+patient.getFName()+" - Nurse Id: "+patient.getNurseId()+"\n";
                 }
                 textViewDisplayPatients.setText(output);
             }

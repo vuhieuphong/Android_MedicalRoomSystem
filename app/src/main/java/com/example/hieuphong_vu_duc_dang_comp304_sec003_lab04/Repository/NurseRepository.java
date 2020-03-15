@@ -75,11 +75,6 @@ public class NurseRepository {
         protected Nurse doInBackground(final Void... voids) {
             return mAsyncNurseDao.getNurseByIdPass(loginId,loginPass);
         }
-
-        @Override
-        protected void onPostExecute(Nurse nurse) {
-            super.onPostExecute(nurse);
-        }
     }
 }
 

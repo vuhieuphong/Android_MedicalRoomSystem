@@ -54,5 +54,23 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(updatePatientActivity);
             }
         });
+
+        final ImageButton btnTest=(ImageButton)findViewById(R.id.btnTest);
+        btnTest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent testActivity=new Intent(getApplicationContext(),TestActivity.class);
+                startActivity(testActivity);
+            }
+        });
+
+        final ImageButton btnViewTest=(ImageButton)findViewById(R.id.btnViewTestInfo);
+        btnViewTest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent viewTestActivity=new Intent(getApplicationContext(),ViewTestActivity.class);
+                startActivity(viewTestActivity);
+            }
+        });
     }
 }

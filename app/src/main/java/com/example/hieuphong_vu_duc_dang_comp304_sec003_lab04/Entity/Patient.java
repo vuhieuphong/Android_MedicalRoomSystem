@@ -2,12 +2,13 @@ package com.example.hieuphong_vu_duc_dang_comp304_sec003_lab04.Entity;
 
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
+import androidx.room.Index;
 import androidx.room.PrimaryKey;
 
 @Entity(foreignKeys = @ForeignKey(entity = Nurse.class,
         parentColumns = "nurseId",
         childColumns = "nurseId"
-        ))
+        ),indices = {@Index(value = {"nurseId"})})
 public class Patient {
     @PrimaryKey(autoGenerate = true)
     private int patientId;

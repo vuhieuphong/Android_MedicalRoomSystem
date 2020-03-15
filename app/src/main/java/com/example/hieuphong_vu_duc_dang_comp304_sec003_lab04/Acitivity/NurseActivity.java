@@ -65,7 +65,7 @@ public class NurseActivity extends AppCompatActivity {
             public void onChanged(@Nullable List<Nurse> nurses) {
                 String output="";
                 for(Nurse nurse:nurses){
-                    output+=nurse.getNurseId()+"."+nurse.getFName()+" "+nurse.getPassword()+"\n";
+                    output+="Nurse Id: "+nurse.getNurseId()+" - FName: "+nurse.getFName()+" - Password: "+nurse.getPassword()+"\n";
                 }
                 textViewDisplayNurses.setText(output);
             }

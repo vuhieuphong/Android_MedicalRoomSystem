@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/textViewTestId"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:text="Enter Test Id(PK):"
+            android:textSize="18dp"
+            android:layout_marginTop="150dp"
+            android:layout_marginLeft="20dp">
+        </TextView>
+
+        <EditText
+            android:id="@+id/editTextTestId"
+            android:layout_width="200dp"
+            android:layout_marginTop="130dp"
+            android:layout_toRightOf="@id/textViewTestId"
+            android:layout_height="wrap_content">
+        </EditText>
+
+        <Button
+            android:id="@+id/buttonSearchTest"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/editTextTestId"
+            android:layout_marginTop="30dp"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/roundedcorners"
+            android:backgroundTint="@color/colorPrimary"
+            android:layout_marginLeft="40dp"
+            android:text="Search" />
+
+        <Button
+            android:id="@+id/buttonReturn"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/editTextTestId"
+            android:layout_marginTop="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="40dp"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/roundedcorners"
+            android:backgroundTint="@color/colorPrimaryDark"
+            android:text="Return" />
+
+        <TextView
+            android:text="View Test By Id"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:fontFamily="sans-serif-black"
+            android:layout_marginTop="60dp"
+            android:layout_centerHorizontal="true"
+            android:textAlignment="center"
+            ></TextView>
+
+        <TextView
+            android:id="@+id/textViewDisplayTestDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:layout_below="@id/buttonReturn"
+            android:layout_marginTop="20dp"
+            android:layout_centerHorizontal="true"
+            />
+
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
