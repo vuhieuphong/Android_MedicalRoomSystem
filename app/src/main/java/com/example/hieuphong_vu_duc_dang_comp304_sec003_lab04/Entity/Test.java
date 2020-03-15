@@ -12,7 +12,7 @@ import androidx.room.PrimaryKey;
         @ForeignKey(entity = Patient.class,
                 parentColumns = "patientId",
                 childColumns = "patientId")
-        })
+        },indices = {@Index(value = {"nurseId"}),@Index(value = {"patientId"})})
 public class Test {
     @PrimaryKey(autoGenerate = true)
     private int testId;
