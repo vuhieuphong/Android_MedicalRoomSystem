@@ -83,5 +83,15 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="90dp"
             ></TextView>
+
+        <TextView
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:layout_below="@id/btnNewNurse"
+            android:textSize="15dp"
+            android:textAlignment="center"
+            android:text="Click Create New Nurse to check Username and Password List" />
     </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

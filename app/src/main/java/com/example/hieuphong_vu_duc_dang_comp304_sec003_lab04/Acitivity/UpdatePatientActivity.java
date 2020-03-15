@@ -29,7 +29,6 @@ public class UpdatePatientActivity extends AppCompatActivity {
     EditText editTextDepartment;
     EditText editTextRoom;
     EditText editTextPatientNurseId;
-    Integer lastPatient;
 
     static Context updatePatientActivityContext;
 
@@ -62,13 +61,6 @@ public class UpdatePatientActivity extends AppCompatActivity {
             }
         });
 
-        patientViewModel.getLastPatientId().observe(this, new Observer<Integer>() {
-            @Override
-            public void onChanged(Integer lastPatientId) {
-                lastPatient=lastPatientId;
-            }
-        });
-
         final Button btnUpdatePatient=(Button) findViewById(R.id.buttonUpdatePatient);
         btnUpdatePatient.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -78,10 +70,6 @@ public class UpdatePatientActivity extends AppCompatActivity {
                     Integer patientIdEntered=Integer.parseInt(editTextPatientId.getText().toString());
                     if(editTextPatientId.getText().toString().matches("")){
                         throw new Exception("Patient Id cannot be empty");
-                    }
-                    else if(patientIdEntered>lastPatient
-                    ||patientIdEntered<0){
-                        throw new Exception("Patient Id not exist");
                     }
                     patient.setPatientId(Integer.parseInt(editTextPatientId.getText().toString()));
                     patient.setFName(editTextFName.getText().toString());
@@ -109,10 +97,6 @@ public class UpdatePatientActivity extends AppCompatActivity {
                     Integer patientIdEntered=Integer.parseInt(editTextPatientId.getText().toString());
                     if(editTextPatientId.getText().toString().matches("")){
                         throw new Exception("Patient Id cannot be empty");
-                    }
-                    else if(patientIdEntered>lastPatient
-                            ||patientIdEntered<0){
-                        throw new Exception("Patient Id not exist");
                     }
                     patientViewModel.deletePatientById(patientIdEntered);
                 }

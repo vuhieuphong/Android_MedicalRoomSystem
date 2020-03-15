@@ -60,15 +60,6 @@ public class PatientActivity extends AppCompatActivity {
             }
         });
 
-        patientViewModel.getLastPatientId().observe(this, new Observer<Integer>() {
-            @Override
-            public void onChanged(Integer lastPatientId) {
-                if(lastPatientId!=null){
-                    editTextPatientId.setText((Integer.toString(lastPatientId+1)));
-                }
-            }
-        });
-
         final Button btnCreatePatient=(Button) findViewById(R.id.buttonCreatePatient);
         btnCreatePatient.setOnClickListener(new View.OnClickListener() {
             @Override

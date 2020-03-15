@@ -20,18 +20,15 @@ public class NurseRepository {
     //private MutableLiveData<Integer> insertNurseResult=
     //        new MutableLiveData<>();
     private LiveData<List<Nurse>> nursesList;
-    private LiveData<Integer> lastNurseId;
 
     public NurseRepository(Context context){
         AppDatabase db=AppDatabase.getInstance(context);
         nurseDao=db.nurseDao();
         nursesList=nurseDao.getAllNurses();
-        lastNurseId=nurseDao.getLastNurseId();
     }
 
     public LiveData<List<Nurse>> getAllNurses(){return  nursesList;}
     //public LiveData<Integer> getInsertNurseResult(){return insertNurseResult;}
-    public LiveData<Integer> getLastNurseId(){return lastNurseId;}
 
     public void insertNurse(Nurse nurse){insertAsync(nurse);}
     public void insertAsync(final Nurse nurse){

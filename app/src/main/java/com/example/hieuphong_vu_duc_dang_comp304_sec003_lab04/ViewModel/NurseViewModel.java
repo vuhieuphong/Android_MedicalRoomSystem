@@ -16,7 +16,6 @@ public class NurseViewModel extends AndroidViewModel {
     private NurseRepository nurseRepository;
     private LiveData<Integer> insertNurseResult;
     private LiveData<List<Nurse>> allNurses;
-    private LiveData<Integer> lastNurseId;
 
 
     public NurseViewModel(@NonNull Application application){
@@ -24,7 +23,6 @@ public class NurseViewModel extends AndroidViewModel {
         nurseRepository=new NurseRepository(application);
         //insertNurseResult=nurseRepository.getInsertNurseResult();
         allNurses=nurseRepository.getAllNurses();
-        lastNurseId=nurseRepository.getLastNurseId();
     }
 
     public void insertNurse(Nurse nurse){
@@ -36,8 +34,6 @@ public class NurseViewModel extends AndroidViewModel {
     //}
 
     public LiveData<List<Nurse>> getAllNurses(){return allNurses;}
-
-    public LiveData<Integer> getLastNurseId(){return lastNurseId;}
 
     public Nurse getNurseByIdPass(int nurse_id, String pass){return nurseRepository.getNurseByIdPass(nurse_id,pass);}
 

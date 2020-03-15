@@ -71,15 +71,6 @@ public class NurseActivity extends AppCompatActivity {
             }
         });
 
-        nurseViewModel.getLastNurseId().observe(this, new Observer<Integer>() {
-            @Override
-            public void onChanged(Integer lastNurseId) {
-                if(lastNurseId!=null){
-                    editTextNurseId.setText((Integer.toString(lastNurseId+1)));
-                }
-            }
-        });
-
         final Button btnCreateNurse=(Button) findViewById(R.id.buttonCreateNurse);
         btnCreateNurse.setOnClickListener(new View.OnClickListener() {
             @Override

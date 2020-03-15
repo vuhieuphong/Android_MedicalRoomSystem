@@ -15,7 +15,6 @@ public class PatientViewModel extends AndroidViewModel {
     private PatientRepository patientRepository;
     private LiveData<Integer> insertPatientResult;
     private LiveData<List<Patient>> allPatients;
-    private LiveData<Integer> lastPatientId;
 
 
     public PatientViewModel(@NonNull Application application){
@@ -23,7 +22,6 @@ public class PatientViewModel extends AndroidViewModel {
         patientRepository =new PatientRepository(application);
         //insertPatientResult= patientRepository.getInsertPatientResult();
         allPatients= patientRepository.getAllPatients();
-        lastPatientId= patientRepository.getLastPatientId();
     }
 
     public void insertPatient(Patient patient){
@@ -44,5 +42,4 @@ public class PatientViewModel extends AndroidViewModel {
 
     public LiveData<List<Patient>> getAllPatients(){return allPatients;}
 
-    public LiveData<Integer> getLastPatientId(){return lastPatientId;}
 }

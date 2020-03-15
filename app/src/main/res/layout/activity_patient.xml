@@ -80,6 +80,7 @@
         <EditText
             android:id="@+id/editTextPatientId"
             android:editable="false"
+            android:text="Auto Generated"
             android:layout_width="200dp"
             android:layout_marginTop="130dp"
             android:layout_toRightOf="@id/textViewPatientId"

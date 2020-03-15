@@ -19,9 +19,6 @@ public interface PatientDao {
     @Query("select * from patient")
     LiveData<List<Patient>> getAllPatients();
 
-    @Query("select max(patientId) from patient")
-    LiveData<Integer> getLastPatientId();
-
     @Update
     void updatePatient(Patient patient);
 
