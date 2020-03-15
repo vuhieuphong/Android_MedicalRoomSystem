@@ -17,8 +17,8 @@ import java.util.List;
 
 public class NurseRepository {
     private NurseDao nurseDao;
-    private MutableLiveData<Integer> insertNurseResult=
-            new MutableLiveData<>();
+    //private MutableLiveData<Integer> insertNurseResult=
+    //        new MutableLiveData<>();
     private LiveData<List<Nurse>> nursesList;
     private LiveData<Integer> lastNurseId;
 
@@ -30,7 +30,7 @@ public class NurseRepository {
     }
 
     public LiveData<List<Nurse>> getAllNurses(){return  nursesList;}
-    public LiveData<Integer> getInsertNurseResult(){return insertNurseResult;}
+    //public LiveData<Integer> getInsertNurseResult(){return insertNurseResult;}
     public LiveData<Integer> getLastNurseId(){return lastNurseId;}
 
     public void insertNurse(Nurse nurse){insertAsync(nurse);}

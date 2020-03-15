@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
@@ -42,6 +43,15 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent patientActivity=new Intent(getApplicationContext(),PatientActivity.class);
                 startActivity(patientActivity);
+            }
+        });
+
+        final ImageButton btnUpdatePatient=(ImageButton)findViewById(R.id.btnUpdatePatientInfo);
+        btnUpdatePatient.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent updatePatientActivity=new Intent(getApplicationContext(),UpdatePatientActivity.class);
+                startActivity(updatePatientActivity);
             }
         });
     }

@@ -22,7 +22,7 @@ public class NurseViewModel extends AndroidViewModel {
     public NurseViewModel(@NonNull Application application){
         super(application);
         nurseRepository=new NurseRepository(application);
-        insertNurseResult=nurseRepository.getInsertNurseResult();
+        //insertNurseResult=nurseRepository.getInsertNurseResult();
         allNurses=nurseRepository.getAllNurses();
         lastNurseId=nurseRepository.getLastNurseId();
     }
@@ -31,9 +31,9 @@ public class NurseViewModel extends AndroidViewModel {
         nurseRepository.insertNurse(nurse);
     }
 
-    public LiveData<Integer> getInsertNurseResult(){
-        return insertNurseResult;
-    }
+    //public LiveData<Integer> getInsertNurseResult(){
+    //   return insertNurseResult;
+    //}
 
     public LiveData<List<Nurse>> getAllNurses(){return allNurses;}
 

@@ -64,7 +64,7 @@
             android:src="@drawable/viewinfo_logo"></ImageButton>
 
         <ImageButton
-            android:id="@+id/btnUpdateInfo"
+            android:id="@+id/btnUpdatePatientInfo"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_below="@id/btnLogout"
@@ -117,7 +117,7 @@
             android:layout_marginTop="10dp"
             android:layout_marginBottom="8dp"
             android:fontFamily="sans-serif-black"
-            android:text="View Patient"
+            android:text="View Test"
             android:textAlignment="center"
             android:textSize="25dp"></TextView>
 
@@ -131,7 +131,7 @@
             android:layout_below="@id/btnLogout"
             android:layout_marginBottom="8dp"
             android:fontFamily="sans-serif-black"
-            android:text="Update Test"
+            android:text="Update Patient"
             android:textSize="25dp"></TextView>
     </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

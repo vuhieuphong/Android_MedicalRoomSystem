@@ -21,7 +21,7 @@ public class PatientViewModel extends AndroidViewModel {
     public PatientViewModel(@NonNull Application application){
         super(application);
         patientRepository =new PatientRepository(application);
-        insertPatientResult= patientRepository.getInsertPatientResult();
+        //insertPatientResult= patientRepository.getInsertPatientResult();
         allPatients= patientRepository.getAllPatients();
         lastPatientId= patientRepository.getLastPatientId();
     }
@@ -30,9 +30,17 @@ public class PatientViewModel extends AndroidViewModel {
         patientRepository.insertPatient(patient);
     }
 
-    public LiveData<Integer> getInsertPatientResult(){
-        return insertPatientResult;
+    public void updatePatient(Patient patient){
+        patientRepository.updatePatient(patient);
     }
+
+    public void deletePatientById(Integer patientId){
+        patientRepository.deletePatientById(patientId);
+    }
+
+    //public LiveData<Integer> getInsertPatientResult(){
+    //    return insertPatientResult;
+    //}
 
     public LiveData<List<Patient>> getAllPatients(){return allPatients;}
 

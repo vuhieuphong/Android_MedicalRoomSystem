@@ -20,7 +20,7 @@ import com.example.hieuphong_vu_duc_dang_comp304_sec003_lab04.ViewModel.PatientV
 
 import java.util.List;
 
-public class PatientActivity extends AppCompatActivity {
+public class UpdatePatientActivity extends AppCompatActivity {
     PatientViewModel patientViewModel;
     Patient patient;
     EditText editTextPatientId;
@@ -29,20 +29,22 @@ public class PatientActivity extends AppCompatActivity {
     EditText editTextDepartment;
     EditText editTextRoom;
     EditText editTextPatientNurseId;
+    Integer lastPatient;
 
-    static Context patientActivityContext;
+    static Context updatePatientActivityContext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_patient);
+        setContentView(R.layout.activity_updatepatient);
         editTextPatientId=(EditText)findViewById(R.id.editTextPatientId);
         editTextFName=(EditText)findViewById(R.id.editTextPatientFname);
         editTextLName=(EditText)findViewById(R.id.editTextPatientLname);
         editTextDepartment=(EditText)findViewById(R.id.editTextPatientDepartment);
         editTextRoom=(EditText)findViewById(R.id.editTextPatientRoom);
         editTextPatientNurseId=(EditText)findViewById(R.id.editTextPatientNurseId);
-        patientActivityContext=getApplicationContext();
+
+        updatePatientActivityContext=getApplicationContext();
 
         final TextView textViewDisplayPatients=(TextView)findViewById(R.id.textViewDisplayPatients);
 
@@ -63,17 +65,25 @@ public class PatientActivity extends AppCompatActivity {
         patientViewModel.getLastPatientId().observe(this, new Observer<Integer>() {
             @Override
             public void onChanged(Integer lastPatientId) {
-                if(lastPatientId!=null){
-                    editTextPatientId.setText((Integer.toString(lastPatientId+1)));
-                }
+                lastPatient=lastPatientId;
             }
         });
 
-        final Button btnCreatePatient=(Button) findViewById(R.id.buttonCreatePatient);
-        btnCreatePatient.setOnClickListener(new View.OnClickListener() {
+        final Button btnUpdatePatient=(Button) findViewById(R.id.buttonUpdatePatient);
+        btnUpdatePatient.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 try {
+                    Integer patientIdEntered=Integer.parseInt(editTextPatientId.getText().toString());
+                    if(editTextPatientId.getText().toString().matches("")){
+                        throw new Exception("Patient Id cannot be empty");
+                    }
+                    else if(patientIdEntered>lastPatient
+                    ||patientIdEntered<0){
+                        throw new Exception("Patient Id not exist");
+                    }
+                    patient.setPatientId(Integer.parseInt(editTextPatientId.getText().toString()));
                     patient.setFName(editTextFName.getText().toString());
                     patient.setLName(editTextLName.getText().toString());
                     patient.setDepartment(editTextDepartment.getText().toString());
@@ -82,7 +92,7 @@ public class PatientActivity extends AppCompatActivity {
                         throw new Exception("Nurse Id cannot be empty");
                     }
                     patient.setNurseId(Integer.parseInt(editTextPatientNurseId.getText().toString()));
-                    patientViewModel.insertPatient(patient);
+                    patientViewModel.updatePatient(patient);
                 }
                 catch (Exception e){
                     Toast.makeText(getApplicationContext(),e.getMessage(),Toast.LENGTH_SHORT).show();
@@ -90,6 +100,27 @@ public class PatientActivity extends AppCompatActivity {
             }
         });
 
+        final Button btnDeletePatient=(Button) findViewById(R.id.buttonDeletePatient);
+        btnDeletePatient.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                try {
+                    Integer patientIdEntered=Integer.parseInt(editTextPatientId.getText().toString());
+                    if(editTextPatientId.getText().toString().matches("")){
+                        throw new Exception("Patient Id cannot be empty");
+                    }
+                    else if(patientIdEntered>lastPatient
+                            ||patientIdEntered<0){
+                        throw new Exception("Patient Id not exist");
+                    }
+                    patientViewModel.deletePatientById(patientIdEntered);
+                }
+                catch (Exception e){
+                    Toast.makeText(getApplicationContext(),e.getMessage(),Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
 
         final Button btnReturn=(Button) findViewById(R.id.buttonReturn);
         btnReturn.setOnClickListener(new View.OnClickListener() {
@@ -99,9 +130,10 @@ public class PatientActivity extends AppCompatActivity {
                 startActivity(mainActivity);
             }
         });
+
     }
 
-    public static Context getPatientActivityContext(){
-        return patientActivityContext;
+    public static Context getUpdatePatientActivityContext(){
+        return updatePatientActivityContext;
     }
 }
