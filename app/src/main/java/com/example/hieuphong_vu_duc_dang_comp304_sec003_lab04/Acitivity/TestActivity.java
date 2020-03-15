@@ -3,6 +3,7 @@ package com.example.hieuphong_vu_duc_dang_comp304_sec003_lab04.Acitivity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -49,6 +50,7 @@ public class TestActivity extends AppCompatActivity {
         testActivityContext=getApplicationContext();
 
         final TextView textViewDisplayTests=(TextView)findViewById(R.id.textViewDisplayTests);
+        textViewDisplayTests.setMovementMethod(new ScrollingMovementMethod());
 
         testViewModel= ViewModelProviders.of(this).get(TestViewModel.class);
         test =new Test();
@@ -57,8 +59,12 @@ public class TestActivity extends AppCompatActivity {
             @Override
             public void onChanged(@Nullable List<Test> tests) {
                 String output="";
+                output=String.format("%-3s %-3s %-3s %-6s %-4s %-3s %-6s %-6s\n",
+                        "Tid","Nid","Pid","Weight","Temp","HR","BPL","BPH");
                 for(Test test:tests){
-                    output+="Test Id: "+test.getTestId()+" - Nurse Id: "+test.getNurseId()+" - Patient Id: "+test.getPatientId()+"\n";
+                    output+=String.format("%-3s %-3s %-3s %-6s %-4s %-3s %-6s %-6s\n",
+                            test.getTestId(),test.getNurseId(),test.getPatientId(),test.getWeight(),
+                            test.getTemperature(),test.getHeartRate(),test.getBPL(),test.getBPH());
                 }
                 textViewDisplayTests.setText(output);
             }
@@ -70,7 +76,7 @@ public class TestActivity extends AppCompatActivity {
             public void onClick(View view) {
                 try {
                     test.setWeight(editTextTestWeight.getText().toString());
-                    test.setTemperature(editTextTestWeight.getText().toString());
+                    test.setTemperature(editTextTestTemperature.getText().toString());
                     test.setHeartRate(editTextTestHeartRate.getText().toString());
                     test.setBPL(editTextTestBPL.getText().toString());
                     test.setBPH(editTextTestBPH.getText().toString());

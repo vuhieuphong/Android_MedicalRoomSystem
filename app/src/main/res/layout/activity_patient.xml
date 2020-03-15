@@ -5,7 +5,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -131,7 +130,9 @@
             android:layout_centerHorizontal="true"
             android:layout_below="@id/editTextPatientNurseId"
             android:layout_marginTop="30dp"
-            android:layout_width="200dp"
+            android:layout_width="160dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="40dp"
             android:layout_height="wrap_content"
             android:background="@drawable/roundedcorners"
             android:backgroundTint="@color/colorPrimary"
@@ -140,9 +141,11 @@
         <Button
             android:id="@+id/buttonReturn"
             android:layout_centerHorizontal="true"
-            android:layout_below="@id/buttonCreatePatient"
+            android:layout_below="@id/textViewPatientNurseId"
             android:layout_marginTop="30dp"
-            android:layout_width="200dp"
+            android:layout_width="160dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="40dp"
             android:layout_height="wrap_content"
             android:background="@drawable/roundedcorners"
             android:backgroundTint="@color/colorPrimaryDark"
@@ -161,8 +164,10 @@
 
         <TextView
             android:id="@+id/textViewDisplayPatients"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:scrollbars = "vertical"
+            android:layout_width="350dp"
+            android:layout_height="160dp"
+            android:typeface="monospace"
             android:text=""
             android:layout_below="@id/buttonReturn"
             android:layout_marginTop="20dp"

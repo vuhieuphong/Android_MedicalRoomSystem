@@ -3,6 +3,7 @@ package com.example.hieuphong_vu_duc_dang_comp304_sec003_lab04.Acitivity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -45,6 +46,7 @@ public class PatientActivity extends AppCompatActivity {
         patientActivityContext=getApplicationContext();
 
         final TextView textViewDisplayPatients=(TextView)findViewById(R.id.textViewDisplayPatients);
+        textViewDisplayPatients.setMovementMethod(new ScrollingMovementMethod());
 
         patientViewModel= ViewModelProviders.of(this).get(PatientViewModel.class);
         patient =new Patient();
@@ -53,8 +55,11 @@ public class PatientActivity extends AppCompatActivity {
             @Override
             public void onChanged(@Nullable List<Patient> patients) {
                 String output="";
+                output=String.format("%-3s %-3s %-8s %-8s %-4s %-8s\n","Pid","Nid","FName","LName","Room","Department");
                 for(Patient patient:patients){
-                    output+="Patient Id: "+patient.getPatientId()+" - FName: "+patient.getFName()+" - Nurse Id: "+patient.getNurseId()+"\n";
+                    output+=String.format("%-3s %-3s %-8s %-8s %-4s %-8s\n",
+                            patient.getPatientId(),patient.getNurseId(),patient.getFName(),patient.getLName(),
+                            patient.getRoom(),patient.getDepartment());
                 }
                 textViewDisplayPatients.setText(output);
             }

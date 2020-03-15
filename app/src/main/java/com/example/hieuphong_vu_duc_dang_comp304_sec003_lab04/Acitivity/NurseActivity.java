@@ -2,6 +2,7 @@ package com.example.hieuphong_vu_duc_dang_comp304_sec003_lab04.Acitivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -40,6 +41,7 @@ public class NurseActivity extends AppCompatActivity {
         editTextPassword=(EditText)findViewById(R.id.editTextNursePassword);
 
         final TextView textViewDisplayNurses=(TextView)findViewById(R.id.textViewDisplayNurses);
+        textViewDisplayNurses.setMovementMethod(new ScrollingMovementMethod());
 
         nurseViewModel= ViewModelProviders.of(this).get(NurseViewModel.class);
         nurse=new Nurse();
@@ -59,13 +61,14 @@ public class NurseActivity extends AppCompatActivity {
             }
         });*/
 
-
         nurseViewModel.getAllNurses().observe(this, new Observer<List<Nurse>>() {
             @Override
             public void onChanged(@Nullable List<Nurse> nurses) {
                 String output="";
+                output=String.format("%-3s %-8s %-8s %-8s %-8s\n","Nid","Password","FName","LName","Department");
                 for(Nurse nurse:nurses){
-                    output+="Nurse Id: "+nurse.getNurseId()+" - FName: "+nurse.getFName()+" - Password: "+nurse.getPassword()+"\n";
+                    output+=String.format("%-3s %-8s %-8s %-8s %-8s\n"
+                            ,nurse.getNurseId(),nurse.getPassword(),nurse.getFName(),nurse.getLName(),nurse.getDepartment());
                 }
                 textViewDisplayNurses.setText(output);
             }
